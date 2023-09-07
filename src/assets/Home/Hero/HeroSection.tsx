@@ -1,22 +1,13 @@
 import { IconArrowRight } from "@tabler/icons-react";
 import styled, { css } from "styled-components";
 import { SectionProps } from "../App";
-// import video from '/videos/video1.mp4';
-// import video from "/videos/hero-video.mp4";
 import video from "/videos/hero-video-bg.mp4";
 
 function HeroSection({ id }: SectionProps) {
   return (
     <HeroLayout id={id}>
       <Video>
-        <video
-          id="background-video"
-          className="video2"
-          autoPlay
-          loop
-          muted
-          poster={video}
-        >
+        <video id="background-video" autoPlay loop muted poster={video}>
           <source src={video} type="video/mp4" />
         </video>
         <h1>Transforming Ideas Into Digital Reality</h1>
@@ -78,7 +69,7 @@ const Video = styled.div`
     cursor: default;
 
     &:hover {
-      transition: opacity 1s 1s ease-in;
+      transition: opacity 4s 14s ease-in-out;
       opacity: 1;
       mix-blend-mode: multiply;
 

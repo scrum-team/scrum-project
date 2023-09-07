@@ -22,7 +22,10 @@ function App() {
     const section = document.getElementById(sectionId);
 
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView();
+      console.log(`Scrolled to section with ID: ${sectionId}`);
+    } else {
+      console.log(`Section with ID "${sectionId}" not found.`);
     }
   }, []);
 

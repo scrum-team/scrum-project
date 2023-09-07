@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const NavigationContainer = styled.div`
@@ -34,7 +35,7 @@ const StyledNavigationMenu = styled.div`
   z-index: 1000;
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-size: 4rem;
   font-weight: 500;
   margin: 1rem 0;
@@ -153,19 +154,19 @@ function NavigationMenu({
         <div className="grid">
           <Container>
             <StyledNavigationMenu>
-              <NavLink href="/#team" onClick={handleLinkClick}>
+              <NavLink to="/#team" onClick={handleLinkClick}>
                 <Number>01</Number> Meet the team
               </NavLink>
               <Divider />
-              <NavLink href="/#clients" onClick={handleLinkClick}>
+              <NavLink to="/#clients" onClick={handleLinkClick}>
                 <Number>02</Number> Clients
               </NavLink>
               <Divider />
-              <NavLink href="/#cases" onClick={handleLinkClick}>
+              <NavLink to="/#cases" onClick={handleLinkClick}>
                 <Number>03</Number> Client cases
               </NavLink>
               <Divider />
-              <NavLink href="/#map" onClick={handleLinkClick}>
+              <NavLink to="/#map" onClick={handleLinkClick}>
                 <Number>04</Number> Find us
               </NavLink>
             </StyledNavigationMenu>

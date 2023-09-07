@@ -1,3 +1,5 @@
+import { useCallback, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Footer from "../../Footer";
 import Header from "../../Header";
 import { useHeaderNavigation } from "../../Hooks/useHeaderNavigation";
@@ -14,6 +16,22 @@ export interface SectionProps {
 
 function App() {
   const { menuOpen, toggleMenu, closeMenu } = useHeaderNavigation();
+  const location = useLocation();
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1);
+      scrollToSection(sectionId);
+    }
+  }, [location, scrollToSection]);
 
   return (
     <>
